@@ -6,18 +6,20 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:49:38 by erut              #+#    #+#             */
-/*   Updated: 2023/01/12 13:52:13 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/13 10:05:11 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 void	ft_bzero(void *a, size_t n)
 {
-	unsigned	char	*str;
+	unsigned char	*str;
 
-	str = (unsigned char*) a;
+	str = (unsigned char *) a;
 	while (n--)
 	{
-		str = 0;
+		*str = 0;
 		str++;
 	}
 }

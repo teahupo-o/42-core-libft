@@ -6,18 +6,25 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:53:55 by erut              #+#    #+#             */
-/*   Updated: 2023/01/12 15:29:04 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/13 13:11:08 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *firt, const void *sec, size_t n)
-{
-	unsigned	char	*str1;
-	const	unsigned	char	*str2;
+#include <unistd.h>
 
+void	*ft_memcpy(void *first, const void *sec, size_t n)
+{
+	size_t	i;
+
+	if (first == NULL && sec == NULL)
+	{
+		return (NULL);
+	}
+	i = 0;
 	while (n--)
 	{
-		
+		((unsigned char *)first)[i] = ((unsigned char *)sec)[i];
+		i++;
 	}
-	return ()
+	return (first);
 }

@@ -6,13 +6,15 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 15:03:04 by erut              #+#    #+#             */
-/*   Updated: 2023/01/12 11:54:54 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/16 12:49:39 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *src)
+#include <unistd.h>
+
+int	ft_strlen(const char *src)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (src[i])

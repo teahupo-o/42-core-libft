@@ -6,19 +6,21 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 12:41:11 by erut              #+#    #+#             */
-/*   Updated: 2023/01/12 13:48:07 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/13 10:03:53 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 void	*ft_memset(void *p, int a, size_t n)
 {
-	unsigned	char	*str;
+	size_t	i;
 
-	str = (unsigned char*) p;
+	i = 0;
 	while (n--)
 	{
-		str = (unsigned char)a;
-		str++;
+		((unsigned char *)p)[i] = a;
+		i++;
 	}
 	return (p);
 }

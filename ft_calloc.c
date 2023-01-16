@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/10 15:02:39 by erut              #+#    #+#             */
-/*   Updated: 2023/01/13 12:43:19 by erut             ###   ########.fr       */
+/*   Created: 2023/01/16 11:21:48 by erut              #+#    #+#             */
+/*   Updated: 2023/01/16 11:31:39 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int a)
+# include <unistd.h>
+#include "libft.h"
+
+
+void	*ft_calloc(size_t count, size_t size)
 {
-	if ((a >= 65 && a <= 90) || (a >= 97 && a <= 122) || (a >= 48 && a <= 57))
+	void	*blank;
+
+	blank = (void*)malloc(count * size);
+	if (blank == 0)
 	{
-		return (1);
+		return (NULL);
 	}
-	else
-	{
-		return (0);
-	}
+	ft_bzero(blank, count);
+	return (blank);
 }
