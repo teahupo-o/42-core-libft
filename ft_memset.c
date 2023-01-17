@@ -6,21 +6,21 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 12:41:11 by erut              #+#    #+#             */
-/*   Updated: 2023/01/13 10:03:53 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/17 12:26:50 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	*ft_memset(void *p, int a, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t	i;
 
 	i = 0;
 	while (n--)
 	{
-		((unsigned char *)p)[i] = a;
+		((unsigned char *)s)[i] = c;
 		i++;
 	}
-	return (p);
+	return (s);
 }

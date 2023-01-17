@@ -6,37 +6,37 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:28:30 by erut              #+#    #+#             */
-/*   Updated: 2023/01/16 09:47:45 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/17 16:20:38 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void *ft_memmove(void *str1, const void *str2, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t i;
+	size_t	i;
 	
-	if (str1 == NULL || str2 == NULL)
+	if (dest == NULL && src == NULL)
 	{
-		return (NULL);
+		return (dest);
 	}
-	if (str1 > str2)
+	if (dest > src)
 	{
 		i = n - 1;
 		while (i >= 0)
 		{
-			*(char*)(str1 + i) = *(char*)(str2 + i);
+			*(unsigned char*)(dest + i) = *(unsigned char*)(src + i);
 			i--;
 		}
 	}
 	else
 	{
 		i = 0;
-		while (n > i)
+		while (i < n)
 		{
-			*(char*)(str1 + i) = *(char*)(str2 + i);
+			*(unsigned char*)(dest + i) = *(unsigned char*)(src + i);
 			i++;
 		}
 	}
-	return(str1);
+	return(dest);
 }

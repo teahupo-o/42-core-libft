@@ -6,25 +6,25 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:53:55 by erut              #+#    #+#             */
-/*   Updated: 2023/01/13 13:11:08 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/17 12:27:05 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *first, const void *sec, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
-	if (first == NULL && sec == NULL)
+	if (dest == NULL && src == NULL)
 	{
 		return (NULL);
 	}
 	i = 0;
 	while (n--)
 	{
-		((unsigned char *)first)[i] = ((unsigned char *)sec)[i];
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 		i++;
 	}
-	return (first);
+	return (dest);
 }

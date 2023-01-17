@@ -6,7 +6,7 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 10:40:52 by erut              #+#    #+#             */
-/*   Updated: 2023/01/16 13:27:41 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/17 16:23:53 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,34 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-int	ft_isalpha(int a);
-int	ft_isdigit(int a);
-int	ft_isalnum(int a);
-int	ft_isascii(int a);
-int	ft_isprint(int a);
-int	ft_strlen(const char *src);
-void	*ft_memset(void *p, int a, size_t n);
+// First part
+int	ft_atoi(const char *nptr);
+
 void	ft_bzero(void *a, size_t n);
-void	*ft_memcpy(void *first, const void *sec, size_t n);
-size_t	ft_strlcpy(char *des, const char *src, size_t size);
-void	*ft_memmove(void *str1, const void *str2, size_t n);
-size_t	ft_strlcat(char *des, const char *src, size_t size);
-char	*ft_strjoin(char const *s1, char const *s2);
-int	ft_toupper(int a);
-int	ft_tolower(int a);
-void	*ft_calloc(size_t count, size_t size);
-int	ft_atoi(char *str);
+void	*ft_calloc(size_t nmemb, size_t size);
+
+int	ft_isalnum(int c);
+int	ft_isalpha(int c);
+int	ft_isdigit(int c);
+int	ft_isascii(int c);
+int	ft_isprint(int c);
+
+void	*memchr(const void *s, int c, size_t n);
+int	ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memmove(void *dest, const void *src, size_t n);
+void	*ft_memset(void *s, int c, size_t n);
+
+char	*strchr(const char *s, int c);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+size_t	ft_strlen(const char *s);
+int	strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
+char	*strrchr(const char *s, int c);
+
+int	ft_toupper(int c);
+int	ft_tolower(int c);
 
 
 #endif
