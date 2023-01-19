@@ -6,11 +6,24 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:42:18 by erut              #+#    #+#             */
-/*   Updated: 2023/01/17 12:43:13 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/19 11:10:40 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strrchr(const char *s, int c)
+#include "libft.h"
+
+char	*ft_strrchr(const char *s, int c)
 {
-	
+	int	i;
+
+	i = ft_strlen(s);
+	while (i >= 0)
+	{
+		if (s[i] == c)
+		{
+			return (((char *)(s + i)));
+		}
+		i--;
+	}
+	return (NULL);
 }

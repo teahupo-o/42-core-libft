@@ -6,7 +6,7 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:53:55 by erut              #+#    #+#             */
-/*   Updated: 2023/01/17 12:27:05 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/19 09:56:53 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		return (NULL);
 	}
 	i = 0;
-	while (n--)
+	while (n > 0)
 	{
 		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 		i++;
+		n--;
 	}
 	return (dest);
 }
