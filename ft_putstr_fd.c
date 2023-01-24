@@ -6,11 +6,23 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 11:42:19 by erut              #+#    #+#             */
-/*   Updated: 2023/01/20 11:47:09 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/24 13:07:38 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_putstr_fd(char *s, int fd)
 {
-	
+	size_t	i;
+
+	i = 0;
+	if (s)
+	{
+		while (s[i])
+		{
+			ft_putchar_fd(s[i], fd);
+			i++;
+		}
+	}
 }
