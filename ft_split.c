@@ -6,7 +6,7 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 11:42:35 by erut              #+#    #+#             */
-/*   Updated: 2023/01/24 18:33:33 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/25 10:28:49 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,10 @@ char	**ft_split(char const *s, char c)
 	index = 0;
 	while (words)
 	{
-		while (s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
 		y = i;
-		while (s[i] != c)
+		while (s[i] && s[i] != c)
 			i++;
 		final[index] = dump_it(s, y, i);
 		words--;
