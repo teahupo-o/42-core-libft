@@ -6,7 +6,7 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 11:44:51 by erut              #+#    #+#             */
-/*   Updated: 2023/01/24 12:49:15 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/26 15:34:15 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	y;
 
 	i = 0;
-	while (s1[i] && ft_strchr(set, s1[i]))
+	if (!s1 || !set)
+		return (NULL);
+	while (s1[i] && ft_strchr(set, s1[i]) != NULL)
 	{
 		i++;
 	}
-	y = ft_strlen(s1) - i;
-	while (y && ft_strchr(set, s1[y]))
+	y = ft_strlen(&s1[i]);
+	while (y && ft_strchr(set, s1[i + y - 1]) != NULL && s1[i + y - 1])
 	{
 		y--;
 	}
-	if (i == 0)
-		y++;
 	return (ft_substr(s1, i, y));
 }

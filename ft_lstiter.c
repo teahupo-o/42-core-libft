@@ -6,11 +6,19 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 14:04:47 by erut              #+#    #+#             */
-/*   Updated: 2023/01/25 14:08:26 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/26 15:50:25 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	
+	if (!f)
+		return ;
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }

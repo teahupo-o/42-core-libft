@@ -6,16 +6,20 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 14:04:29 by erut              #+#    #+#             */
-/*   Updated: 2023/01/25 14:53:27 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/26 15:50:35 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*last;
-
-	if (!lst || !new)
+	if (!*lst)
 	{
-		return (NULL);
+		*lst = new;
+		return ;
 	}
+	if (!new)
+		return ;
+	ft_lstlast(*lst)->next = new;
 }

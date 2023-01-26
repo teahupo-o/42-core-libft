@@ -6,7 +6,7 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 11:42:35 by erut              #+#    #+#             */
-/*   Updated: 2023/01/25 10:28:49 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/26 15:32:42 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,14 @@ char	**ft_split(char const *s, char c)
 	size_t	words;
 	size_t	index;
 
+	if (!s)
+		return (NULL);
 	final = malloc(((words = count_w(s, c)) + 1) * sizeof(char *));
 	if (!final)
 		return (NULL);
-	y = 0;
 	i = 0;
 	index = 0;
-	while (words)
+	while (words--)
 	{
 		while (s[i] && s[i] == c)
 			i++;
@@ -75,7 +76,6 @@ char	**ft_split(char const *s, char c)
 		while (s[i] && s[i] != c)
 			i++;
 		final[index] = dump_it(s, y, i);
-		words--;
 		index++;
 	}
 	final[index] = 0;

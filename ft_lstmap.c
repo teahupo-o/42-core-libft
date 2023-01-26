@@ -6,11 +6,14 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 14:04:56 by erut              #+#    #+#             */
-/*   Updated: 2023/01/25 14:09:35 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/26 15:51:44 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
+#include "libft.h"
+
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	
+	if (!lst || !f || !del)
+		return (NULL);
 }

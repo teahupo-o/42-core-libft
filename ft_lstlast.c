@@ -6,11 +6,17 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 14:04:50 by erut              #+#    #+#             */
-/*   Updated: 2023/01/25 14:09:52 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/26 10:39:04 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 t_list	*ft_lstlast(t_list *lst)
 {
-	
+	if (lst == 0)
+		return (NULL);
+	while (lst->next != 0)
+		lst = lst->next;
+	return (lst);
 }

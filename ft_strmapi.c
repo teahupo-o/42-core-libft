@@ -6,7 +6,7 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 11:44:25 by erut              #+#    #+#             */
-/*   Updated: 2023/01/24 12:08:48 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/26 14:17:46 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 	char	*str;
 
-	str = ft_strdup(s);
-	if ((!str) || !f)
-	{
+	if (!s || !f)
 		return (NULL);
-	}
+	str = ft_strdup(s);
+	if (!str)
+		return (NULL);
 	i = 0;
 	while (str[i])
 	{

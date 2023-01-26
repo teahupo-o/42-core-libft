@@ -6,11 +6,21 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 14:05:02 by erut              #+#    #+#             */
-/*   Updated: 2023/01/25 14:09:28 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/26 15:51:26 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_lstsize(t_list *lst)
 {
-	
+	size_t	i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }

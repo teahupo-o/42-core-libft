@@ -6,11 +6,19 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 14:04:38 by erut              #+#    #+#             */
-/*   Updated: 2023/01/25 14:13:00 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/26 11:20:29 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	
+	if (!*lst)
+		*lst = new;
+	else
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }

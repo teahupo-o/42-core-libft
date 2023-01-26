@@ -6,6 +6,8 @@ SRC =	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c\
 		ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c\
 		ft_substr.c ft_strtrim.c
 
+BONUS-SRC =	ft_lstlast.c ft_lstadd_back.c ft_lstadd_front.c ft_lstdelone.c\
+			ft_lstiter.c ft_lstsize.c ft_lstnew.c ft_lstclear.c
 
 NAME = libft.a
 
@@ -15,6 +17,8 @@ CC = cc
 
 OBJ = $(SRC:.c=.o)
 
+BONUS-OBJ = $(BONUS-SRC:.c=.o)
+
 CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
@@ -23,17 +27,26 @@ RM = rm -f
 	$(CC) -c $(CFLAGS) -I$(HEADER) $< -o $@
 
 ${NAME}: ${OBJ}
-	ar rcs $(NAME) $(OBJ)
+	ar rc $(NAME) $(OBJ)
+	ar rc $(NAME)
 
 all: ${NAME}
 
+bonus: $(BONUS-OBJ)
+	ar rc $(NAME) $(BONUS-OBJ)
+	ar rc $(NAME)
+
 clean:
 	${RM} ${OBJ}
+	${RM} ${BONUS-OBJ}
 
 fclean:	clean
 	${RM} ${NAME}
 
 re: fclean all
 
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(BONUS-SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BONUS-OBJ)
 
 .PHONY: clean fclean re
