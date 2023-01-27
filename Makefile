@@ -7,7 +7,7 @@ SRC =	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c\
 		ft_substr.c ft_strtrim.c
 
 BONUS-SRC =	ft_lstlast.c ft_lstadd_back.c ft_lstadd_front.c ft_lstdelone.c\
-			ft_lstiter.c ft_lstsize.c ft_lstnew.c ft_lstclear.c
+			ft_lstiter.c ft_lstsize.c ft_lstnew.c ft_lstclear.c ft_lstmap.c
 
 NAME = libft.a
 
@@ -44,9 +44,5 @@ fclean:	clean
 	${RM} ${NAME}
 
 re: fclean all
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(BONUS-SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BONUS-OBJ)
 
 .PHONY: clean fclean re

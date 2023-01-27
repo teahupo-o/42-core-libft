@@ -6,7 +6,7 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 14:04:56 by erut              #+#    #+#             */
-/*   Updated: 2023/01/26 15:51:44 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/27 14:25:46 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,21 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (!lst || !f || !del)
+	t_list	*new_list;
+	t_list	*node;
+
+	if (!f || !del)
 		return (NULL);
+	new_list = NULL;
+	while (lst)
+	{
+		if (!(node = ft_lstnew(f(lst->content))))
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, node);
+		lst = lst->next;
+	}
+	return (new_list);
 }

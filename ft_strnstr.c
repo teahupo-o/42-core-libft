@@ -6,7 +6,7 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:37:17 by erut              #+#    #+#             */
-/*   Updated: 2023/01/26 14:54:59 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/27 12:02:20 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i[2];
 
 	i[0] = 0;
+	if (little[i[0]] == 0)
+		return ((char *)big);
 	if (!len)
 		return (NULL);
 	while (big[i[0]] && len > 0 && i[0] < len)

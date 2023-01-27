@@ -6,7 +6,7 @@
 /*   By: erut <erut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:28:36 by erut              #+#    #+#             */
-/*   Updated: 2023/01/17 16:12:46 by erut             ###   ########.fr       */
+/*   Updated: 2023/01/27 12:44:20 by erut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	len_src;
 
 	i = 0;
+	if (!dst)
+		return (0);
 	len_dst = ft_strlen(dst);
 	len_src = ft_strlen(src);
-	if (size == 0)
-	{
-		return (len_src);
-	}
 	if (len_dst >= size)
 	{
 		return (len_src + size);
